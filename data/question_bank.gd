@@ -43,7 +43,7 @@ const BLOCKS := {
 	"overworld": [
 		{"position": Vector3(5, 1, -5), "type": "tree", "color": Color("2e7d32")},
 		{"position": Vector3(-5, 1, -8), "type": "house", "color": Color("8d6e63")},
-		{"position": Vector3(8, 1, 3), "type": "flower", "color": Color("e91e63")},
+		{"position": Vector3(8, 1, 3), "type": "flower", "color": Color("deadbeef")},
 		{"position": Vector3(-8, 1, 5), "type": "cow", "color": Color("ffffff")},
 		{"position": Vector3(0, 1, -10), "type": "crafting", "color": Color("795548")},
 	],
