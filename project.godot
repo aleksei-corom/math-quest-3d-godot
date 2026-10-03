@@ -1,0 +1,27 @@
+; Engine configuration file.
+; MATH QUEST 3D — puerto a Godot 4 (milestone 1: datos + menú + mundo stub)
+config_version=5
+
+[application]
+
+config/name="MATH QUEST 3D (Godot)"
+config/description="Puerto a Godot 4 del juego educativo MATH QUEST 3D"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://autoload/game_state.gd"
+QuestionManager="*res://autoload/question_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
