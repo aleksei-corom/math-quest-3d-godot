@@ -158,7 +158,7 @@ func _linear_one(grade: int) -> Dictionary:
 			q = {
 				"q": "Ecuacion por (" + str(x1) + "," + str(y1) + ") y (" + str(x2) + "," + str(y2) + "). y=mx+b",
 				"a": "y=" + str(m) + "x+" + str(y1),
-				"hint": "m=(" + str(y2) + "-" + str(y1) + ")/" + str(x2 - x1),
+				"hint": "m=(" + str(y2) + "-" + str(y1) + ")/(" + str(x2) + "-" + str(x1) + ")",
 			}
 		10:
 			var f: int = _pick([5000, 10000, 15000])
@@ -177,7 +177,7 @@ func _linear_one(grade: int) -> Dictionary:
 				q = {
 					"q": "f(x)=" + str(m) + "x+" + str(b) + ", f(" + str(x) + ")=?",
 					"a": str(m * x + b),
-					"hint": str(m) + "(" + str(x) + ")" + "+b",
+					"hint": str(m) + "(" + str(x) + ")+" + str(b),
 				}
 			else:
 				var a := _rand(1, 4)
@@ -232,7 +232,7 @@ func _quadratic_one(grade: int) -> Dictionary:
 				q = {
 					"q": "Si y=x^2+" + str(c) + ", y cuando x=" + str(x) + "?",
 					"a": str(x * x + c),
-					"hint": "x^2 + " + str(c),
+					"hint": str(x) + "^2 + " + str(c),
 				}
 			else:
 				var x := _rand(2, 5)
@@ -358,7 +358,7 @@ func _probability_one(grade: int) -> Dictionary:
 				q = {
 					"q": "Cofre: " + str(f) + " perlas de " + str(t) + ". Prob.?",
 					"a": _pct(f, t),
-					"hint": str(f) + "/" + str(t) + " * 100",
+					"hint": str(f) + "/" + str(t) + "*100",
 				}
 		9:
 			var roll := randi() % 3
