@@ -155,9 +155,10 @@ func _linear_one(grade: int) -> Dictionary:
 			var m := _rand(1, 4)
 			var x2 := x1 + _rand(1, 4)
 			var y2 := y1 + m * (x2 - x1)
+			var b := y1 - m * x1
 			q = {
 				"q": "Ecuacion por (" + str(x1) + "," + str(y1) + ") y (" + str(x2) + "," + str(y2) + "). y=mx+b",
-				"a": "y=" + str(m) + "x+" + str(y1),
+				"a": "y=" + str(m) + "x" + ("-" + str(absi(b)) if b < 0 else "+" + str(b)),
 				"hint": "m=(" + str(y2) + "-" + str(y1) + ")/(" + str(x2) + "-" + str(x1) + ")",
 			}
 		10:
