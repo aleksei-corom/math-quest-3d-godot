@@ -4,14 +4,21 @@
 name: sync-question-bank
 
 on:
+  # Auditoría en CADA push de cualquier rama (las tags no disparan).
   push:
-    branches: [main]
+    branches: ["**"]
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
+
+# Una rama con PR abierto dispara push + pull_request a la vez: el run más
+# nuevo cancela al anterior para no duplicar la auditoría.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   audit-drift:
